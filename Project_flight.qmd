@@ -1,0 +1,44 @@
+---
+title: "My Quarto Test"
+format: html
+jupyter: python3
+---
+
+Ctrl + Alt + I
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv("C:\\Users\\kbk29\\OneDrive\\바탕 화면\\Workspace\\LS_BigDataSchool\\Data\\regex_practice_data.csv")
+
+df.info()
+
+df.head()
+
+df[['이름', '메일', '전화번호', '주소']] = df['전체_문자열'].str.extract(r'(\S+)\s+(\S+)\s+(\S+)\s+(.+)')
+
+df.head()
+
+
+```
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv("C:\\Users\\kbk29\\OneDrive\\바탕 화면\\Workspace\\LS_BigDataSchool\\Data\\bike_data.csv"
+)
+
+df.info()
+
+# 시간(hour)만 추출
+df['hour'] = df['datetime'].dt.hour
+
+# 요일(월:0 ~ 일:6)
+df['weekday'] = df['datetime'].dt.weekday
+
+# 월(month)
+df['month'] = df['datetime'].dt.month
+
+
+```
+
